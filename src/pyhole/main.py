@@ -27,6 +27,7 @@ class PiHole(RestClient):
         return self.post(endpoint, json=payload)
 
     def close_session(self):
+        self.delete('/auth')
         return self.close()
 
     def Config(self):
